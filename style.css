@@ -54,6 +54,7 @@ body {
     .header > p {
         margin-bottom: 0;
         text-align: start;
+        margin: 3rem 0rem ;
     }
 }
 
@@ -84,12 +85,23 @@ li {
 form {
     background-color: white;
     border-radius: 8px;
-    padding: 0rem 3rem;
+    padding: 0rem 1.5rem;
+    padding-bottom: 1rem;
     box-shadow: 0px 10px 0px 0px rgba(0, 0, 0, 0.2);
 }
 
 .field {
     padding-top: 0.5rem;
+}
+
+@media (min-width: 376px) {
+    .field {
+        padding-top: 1.5rem;
+    }
+
+    form {
+        padding: 0rem 3rem 1.5rem 3rem;
+    }
 }
 
 ul {
@@ -100,14 +112,43 @@ ul {
 input, button{
     width: 100%;
     margin: 1rem 0rem 0rem 0rem;
-    font-size: 1rem;
 }
 
 input {
-    padding: 0.5rem 0rem 0.5rem 1.5rem;
+    padding: 1rem 0rem 1rem 1.5rem;
+    border-color: rgba(0, 0, 0, 0.156);
+    border-width: 0.091rem;
+    border-radius: 4px;
+    font-size: 1rem;
 }
 
 input::placeholder {
     color: black;
     opacity: 0.6;
+}
+
+input:invalid {
+    border: hsl(0, 100%, 74%)  2px solid;
+}
+
+button {
+    text-align: center;
+    font-size: 1.2rem;
+    color: white;
+    background-color: hsl(154, 59%, 51%);
+    border-width: 0;
+    border-radius: 4px;
+    padding: 0.75em;
+    box-shadow: 0px 4px 0px 0px rgba(0, 100, 0, 0.53);
+}
+
+.field > p {
+    color: rgba(0, 0, 0, 0.296);
+    text-align: center;
+    font-size: 1rem;
+}
+
+.orange {
+    color: rgb(255, 89, 0);
+    opacity: 1;
 }
