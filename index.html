@@ -12,36 +12,42 @@
         <p>See how experienced developers solve problems in real-time. Watching scripted tutorials is great,
             but understanding how developers think is invaluable.</p>
     </header>
-<div class="title">
-    <p><strong>Try it free 7 days</strong> then $20/mo. thereafter</p>
-    <form action="" method="get">
-        <div class="field">
-            <ul>
-                <li>
-                    <label for="first-name"></label>
-                    <input type="text" name="first-name" id="first-name" minlength="3" maxlength="20"
-                    placeholder="First Name" required>
-                </li>
-                <li>
-                    <label for="last-name"></label>
-                    <input type="text" name="last-name" id="last-name" minlength="3" maxlength="20" required
-                    placeholder="Last Name">
-                </li>
-                <li>
-                    <label for="email"></label>
-                    <input type="email" name="email" id="email" required placeholder="Email Address">
-                </li>
-                <li>
-                    <label for="password"></label>
-                    <input type="password" name="password" id="password" required placeholder="Password">
-                </li>
-                <li>
-                    <button type="submit">Claim your free trial</button>
-                </li>
-            </ul>
-            <p>By clicking the button, you are agreeing to our <span class="orange">Terms and Services</span></p>
-        </div>
+    <div class="title">
+        <p><strong>Try it free 7 days</strong> then $20/mo. thereafter</p>
+        <form action="" method="get" id="test-form">
+            <div class="field">
+                <ul>
+                    <li>
+                        <label for="first-name"></label>
+                        <input type="text" name="first-name" id="first-name" maxlength="20"
+                        placeholder="First Name" required>
+                        <p id="help-1"><em>First Name cannot be empty</em></p>
+                    </li>
+                    <li>
+                        <label for="last-name"></label>
+                        <input type="text" name="last-name" id="last-name" maxlength="20" required
+                        placeholder="Last Name">
+                        <p id="help-2"><em>Last Name cannot be empty</em></p>
+                    </li>
+                    <li>
+                        <label for="email"></label>
+                        <input type="email" name="email" id="email" required placeholder="Email Address">
+                        <p id="help-3"><em>Looks like this is not an email</em></p>
+                    </li>
+                    
+                    <li>
+                        <label for="password"></label>
+                        <input type="password" name="password" id="password" required placeholder="Password" minlength="6">
+                        <p id="help-4"><em>Password must be more than 6 characters</em></p>
+                    </li>
+                    <li>
+                        <button id="submitButton">Claim your free trial</button>
+                    </li>
+                </ul>
+                <p class="TOS">By clicking the button, you are agreeing to our <span class="orange">Terms and Services</span></p>
+            </div>
+        </form>
     </div>
-    </form>
+    <script src="./script.js"></script>
 </body>
 </html>

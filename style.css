@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
 * {
     box-sizing: border-box;
 }
@@ -13,8 +16,8 @@ body {
     display: flex;
     flex-direction: column;
     font-size: 1rem;
-    font-family: sans-serif;
     margin: 0rem 1rem;
+    font-family: 'Poppins', sans-serif;
 }
 
 @media (min-width: 376px) {
@@ -26,6 +29,12 @@ body {
     }
 }
 
+@media (max-width: 1281px) {
+    body {
+        flex-direction: column ;
+    }
+}
+
 .header {
     color: white;
 }
@@ -33,6 +42,7 @@ body {
 .header > h1 {
     text-align: center;
     margin: 5rem 0rem 0rem 0rem;
+    font-weight: 700;
 }
 
 .header > p {
@@ -49,6 +59,7 @@ body {
     .header > h1 {
         font-size: 3rem;
         text-align: start;
+        line-height: 1;
     }
 
     .header > p {
@@ -92,6 +103,7 @@ form {
 
 .field {
     padding-top: 0.5rem;
+    font-size: 1rem;
 }
 
 @media (min-width: 376px) {
@@ -127,10 +139,6 @@ input::placeholder {
     opacity: 0.6;
 }
 
-input:invalid {
-    border: hsl(0, 100%, 74%)  2px solid;
-}
-
 button {
     text-align: center;
     font-size: 1.2rem;
@@ -138,11 +146,16 @@ button {
     background-color: hsl(154, 59%, 51%);
     border-width: 0;
     border-radius: 4px;
-    padding: 0.75em;
+    padding: 0.75rem;
     box-shadow: 0px 4px 0px 0px rgba(0, 100, 0, 0.53);
+    cursor: pointer;
 }
 
-.field > p {
+button:hover {
+    background-color: hsla(154, 59%, 51%, 0.725);
+}
+
+.TOS {
     color: rgba(0, 0, 0, 0.296);
     text-align: center;
     font-size: 1rem;
@@ -151,4 +164,50 @@ button {
 .orange {
     color: rgb(255, 89, 0);
     opacity: 1;
+}
+
+[id^='help'] {                              /* Learned this from TOP. This would apply styles to ID's with the same value. */
+    color: hsl(0, 100%, 74%);               /* used " ^= " to match string value from the start */
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+    float: right;
+    font-size: 0.75rem;
+    display: none;
+}
+
+
+#first-name:not(:focus):not(:placeholder-shown):invalid {
+    border: 2px solid red;
+    background: url(./images/icon-error.svg) no-repeat 95%;
+}
+
+#first-name:not(:focus):not(:placeholder-shown):invalid ~ #help-1 {
+    display: inline-block; 
+}
+
+#last-name:not(:focus):not(:placeholder-shown):invalid {
+    border: 2px solid red;
+    background: url(./images/icon-error.svg) no-repeat 95%;
+}
+
+#last-name:not(:focus):not(:placeholder-shown):invalid ~ #help-2 {
+    display: inline-block; 
+}
+
+#email:not(:active):not(:placeholder-shown):invalid {
+    border: 2px solid red;
+    background: url(./images/icon-error.svg) no-repeat 95%;
+}
+
+#email:not(:focus):not(:placeholder-shown):invalid ~ #help-3 {
+    display: inline-block; 
+}
+
+#password:not(:focus):not(:placeholder-shown):invalid {
+    border: 2px solid red;
+    background: url(./images/icon-error.svg) no-repeat 95%;
+}
+
+#password:not(:focus):not(:placeholder-shown):invalid ~ #help-4 {
+    display: inline-block; 
 }
